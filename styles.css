@@ -71,16 +71,49 @@ button {
     /* Add more styles if needed */
 }
 
-/* Responsive adjustments can be made with media queries if necessary */
-.fixed-header-left, .fixed-header-right{
+/* Makes the header not move when scrolling */
+.fixed-header-left,
+.fixed-header-right {
     position: sticky;
     top: 0;
     background-color: #f0f0f0;
     z-index: 10;
     padding-top: 10px;
     text-align: center;
-    border-radius: 15px 15px 0 0; /* Optional: to match the container's border radius */
+    border-radius: 15px 15px 0 0;
+    /* Optional: to match the container's border radius */
 }
-.inner-rectangle-left h1, .inner-rectangle-right h1{
+
+/*Centers the headers*/
+.inner-rectangle-left h1,
+.inner-rectangle-right h1 {
     text-align: center;
+}
+
+/*clue sheet table*************************************************************************************/
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: auto;
+    /* Removes the space between borders */
+    
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    /* Adds a border to the cells */
+    padding: 8px;
+    /* Adds some padding inside the cells */
+    text-align: center;
+    /* Aligns the text to the left */
+}
+
+th {
+    background-color: #f9f9f9;
+    /* Gives a background color to the header cells */
+}
+.Player-Name-Header{
+    width: 1%;
 }
