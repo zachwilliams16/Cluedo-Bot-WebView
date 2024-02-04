@@ -1,0 +1,86 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.left-side,
+.right-side {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.inner-rectangle-right {
+    height: 100%;
+}
+
+.inner-rectangle-left {
+    height: 90%;
+}
+
+.inner-rectangle-left,
+.inner-rectangle-right {
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.inner-rectangle-left,
+.inner-rectangle-right {
+    overflow-y: auto;
+}
+
+.inner-rectangle-left::-webkit-scrollbar,
+.inner-rectangle-right::-webkit-scrollbar {
+    display: none;
+}
+
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 8.6%;
+}
+
+button {
+    padding: 10px 40px;
+    border-radius: 10px;
+    /* Rounded corners */
+    border: none;
+    cursor: pointer;
+    /* Add more styles if needed */
+}
+
+.text-list {
+    list-style: none;
+
+}
+
+.text-list li {
+    padding: 3px 0;
+    /* Add more styles if needed */
+}
+
+/* Responsive adjustments can be made with media queries if necessary */
+.fixed-header-left, .fixed-header-right{
+    position: sticky;
+    top: 0;
+    background-color: #f0f0f0;
+    z-index: 10;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 15px 15px 0 0; /* Optional: to match the container's border radius */
+}
+.inner-rectangle-left h1, .inner-rectangle-right h1{
+    text-align: center;
+}
