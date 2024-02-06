@@ -1,3 +1,10 @@
+:root{
+    --background: #4e4a87;
+    --background2: #7471ac;
+    --tablecolor: #9d9ad6;
+    --hovercolor: #9d9ad6;
+}
+
 body,
 html {
     height: 100%;
@@ -9,6 +16,7 @@ html {
 .container {
     display: flex;
     height: 100%;
+    background-color: var(--background);
 }
 
 .left-side,
@@ -28,7 +36,7 @@ html {
 
 .inner-rectangle-left,
 .inner-rectangle-right {
-    background-color: #f0f0f0;
+    background-color: var(--background2);
     border-radius: 15px;
     margin-bottom: 10px;
     position: relative;
@@ -53,17 +61,24 @@ html {
 }
 
 button {
-    padding: 10px 40px;
+    padding: 10px 80px;
     border-radius: 10px;
     /* Rounded corners */
     border: none;
     cursor: pointer;
+    background-color: var(--background2);
     /* Add more styles if needed */
+}
+button:hover{
+    background-color: var(--hovercolor);
 }
 
 .text-list {
     list-style: none;
 
+}
+.text-list-item:hover{
+    background-color: var(--hovercolor);
 }
 
 .text-list li {
@@ -76,7 +91,7 @@ button {
 .fixed-header-right {
     position: sticky;
     top: 0;
-    background-color: #f0f0f0;
+    background-color: var(--background2);
     z-index: 10;
     padding-top: 10px;
     text-align: center;
@@ -102,7 +117,7 @@ table {
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid black;
     /* Adds a border to the cells */
     padding: 8px;
     /* Adds some padding inside the cells */
@@ -110,10 +125,13 @@ td {
     /* Aligns the text to the left */
 }
 
-th {
-    background-color: #f9f9f9;
+th , td{
+    background-color: var(--tablecolor);
     /* Gives a background color to the header cells */
 }
+
+
 .Player-Name-Header{
     width: 1%;
 }
+
