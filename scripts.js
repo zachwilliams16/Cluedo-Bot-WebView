@@ -74,7 +74,7 @@ class Card {
      * 
      * @returns list of players who dont have this card
      */
-    getDeffDoesnt() {
+    getDefDoesnt() {
         return this.defDoesnt;
     }
 
@@ -105,6 +105,11 @@ class Card {
      */
     setOwner(initPlayer) {
         this.owner = initPlayer;
+        for (i = 0; i < Cards.length; i++) {
+            if (this.numID == Cards[i].getID()) {
+                initPlayer.addCard(Cards[i]);
+            }
+        }
         // adds all players other players to defDoesnt which also clears maybe list
         for (i = 0; i < Players.length; i++) {
             if (!initPlayer.equals(Players[i])) {
@@ -119,6 +124,11 @@ class Card {
      * @param {*} initPlayer adds player to defDoesnt. player is removed if in maybe
      */
     addDefDoesnt(initPlayer) {
+        for (i = 0; i < Cards.length; i++) {
+            if (this.numID == Cards[i].getID()) {
+                initPlayer.removeCard(Cards[i]);
+            }
+        }
         // removes from maybe        
         for (i = 0; i < this.maybe.length; i++) {
             if (initPlayer.equals(this.maybe[i])) {
@@ -232,9 +242,9 @@ class Player {
      * 
      * @param {*} initCard the card being added to this players hand
      */
-    addCard(initCard){
-        for(i = 0; i < this.myHand.length;i++){
-            if(this.myHand[i].equals(initCard)){
+    addCard(initCard) {
+        for (i = 0; i < this.myHand.length; i++) {
+            if (this.myHand[i].equals(initCard)) {
                 return;
             }
         }
@@ -245,9 +255,9 @@ class Player {
      * 
      * @param {*} initCard if initcard is in players hand it is removed
      */
-    removeCard(initCard){
-        for(i = 0; i < this.myHand.length; i++){
-            if(this.myHand[i].equals(initCard)){
+    removeCard(initCard) {
+        for (i = 0; i < this.myHand.length; i++) {
+            if (this.myHand[i].equals(initCard)) {
                 this.myHand.splice(i);
             }
         }
@@ -259,8 +269,27 @@ class Player {
      * @param {*} initWhatCard the card that was guessed when this player proved wrong
      * @param {*} initWhereCard the card that was guessed when this player proved wrong
      */
-    addMaybeCards(initWhoCard, initWhatCard, initWhereCard){
+    addMaybeCards(initWhoCard, initWhatCard, initWhereCard) {
         this.maybeCards.push([initWhoCard, initWhatCard, initWhereCard]);
+
+        for (i = 0; i < Players.length; i++) {
+            if (this.numID == Players[i].getID()) {
+                initWhoCard.addMaybeCards(Players[i]);
+            }
+        }
+        for (i = 0; i < Players.length; i++) {
+            if (this.numID == Players[i].getID()) {
+                initWhatCard.addMaybeCards(Players[i]);
+            }
+        }
+        for (i = 0; i < Players.length; i++) {
+            if (this.numID == Players[i].getID()) {
+                initWhereCard.addMaybeCards(Players[i]);
+            }
+        }
+
+
+
     }
 
 }
