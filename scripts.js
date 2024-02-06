@@ -206,8 +206,6 @@ class Player {
         return this.myHand;
     }
 
-
-
     /**
      * 
      * @returns the cards this player might have based on what they have proved wrong. returns in the format of [[who, what, where], ...]
@@ -230,7 +228,39 @@ class Player {
 
     //modifiers *************************************************
 
+    /**
+     * 
+     * @param {*} initCard the card being added to this players hand
+     */
+    addCard(initCard){
+        for(i = 0; i < this.myHand.length;i++){
+            if(this.myHand[i].equals(initCard)){
+                return;
+            }
+        }
+        this.myHand.push(initCard);
+    }
 
-    //TODO: finish this section of class
+    /**
+     * 
+     * @param {*} initCard if initcard is in players hand it is removed
+     */
+    removeCard(initCard){
+        for(i = 0; i < this.myHand.length; i++){
+            if(this.myHand[i].equals(initCard)){
+                this.myHand.splice(i);
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param {*} initWhoCard the card that was guessed when this player proved wrong
+     * @param {*} initWhatCard the card that was guessed when this player proved wrong
+     * @param {*} initWhereCard the card that was guessed when this player proved wrong
+     */
+    addMaybeCards(initWhoCard, initWhatCard, initWhereCard){
+        this.maybeCards.push([initWhoCard, initWhatCard, initWhereCard]);
+    }
 
 }
