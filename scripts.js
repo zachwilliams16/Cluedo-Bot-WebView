@@ -1,5 +1,6 @@
 var Players = [];
 var Cards = [];
+var CardsInHand;
 
 
 class Card {
@@ -172,7 +173,7 @@ class Player {
     maybeCards = [];
 
     // constructor *************************************************
-    
+
     constructor(initName) {
         this.numID = totalNumPlayers;
         totalNumPlayers++;
@@ -205,6 +206,8 @@ class Player {
         return this.myHand;
     }
 
+
+
     /**
      * 
      * @returns the cards this player might have based on what they have proved wrong. returns in the format of [[who, what, where], ...]
@@ -218,8 +221,8 @@ class Player {
      * @param {*} initPlayer if this player equals initplayer
      * @returns true if both players are the same players false otherwise
      */
-    equals(initPlayer){
-        if(this.numID == initPlayer.getID()){
+    equals(initPlayer) {
+        if (this.numID == initPlayer.getID()) {
             return true;
         }
         return false;
@@ -227,6 +230,7 @@ class Player {
 
     //modifiers *************************************************
 
-//TODO: finish this section of class
+
+    //TODO: finish this section of class
 
 }
